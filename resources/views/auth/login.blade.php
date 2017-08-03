@@ -53,7 +53,13 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
+                                <a href="redirect">FB Login</a> | <a href="redirect/google">G+</a> | <a href="redirect/github">Github</a>
+                                <div
+                                class="fb-like"
+                                data-share="true"
+                                data-width="450"
+                                data-show-faces="true">
+                                </div>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>

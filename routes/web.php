@@ -17,12 +17,18 @@ Route::get('/', function () {
 });
 
 Route::get('hello', 'Hello@index');
-Route::get('/hello',function(){
-    return 'Hello World!';
-});
+// Route::get('/hello',function(){
+//     return 'Hello World!';
+// });
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
+
+Route::get('/redirect/google', 'SocialAuthController@redirectToGoogle');
+Route::get('/callback/google', 'SocialAuthController@callbackToGoogle');
+
+Route::get('/redirect/github', 'SocialAuthController@redirectToProvider');
+Route::get('/callback/github', 'SocialAuthController@handleProviderCallback');
